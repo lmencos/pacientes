@@ -11,12 +11,17 @@ const Formulario = () => {
     sintomas: ''
   });
 
+  //Leer lo que el usuario escribe en el form o cita
   const actualizarState = (e) => {
     actualizarCita({
       ...cita,
       [e.target.name]: e.target.value
     })
   }
+  
+  //Extraer los valores del objeto cita
+  const { mascota, propietario, fecha, hora, sintomas } = cita;
+
 
   return ( 
     <Fragment>
@@ -29,6 +34,7 @@ const Formulario = () => {
           className="u-full-width"
           placeholder="Nombre Mascota"
           onChange={actualizarState}
+          value={mascota}
         />
         <label>Nombre del propietario</label>
         <input 
@@ -37,6 +43,7 @@ const Formulario = () => {
           className="u-full-width"
           placeholder="Nombre del propietario"
           onChange={actualizarState}
+          value={propietario}
         />
         <label>Fecha</label>
         <input 
@@ -44,6 +51,7 @@ const Formulario = () => {
           name="fecha"
           className="u-full-width"
           onChange={actualizarState}
+          value={fecha}
         />
         <label>Hora de la cita</label>
         <input 
@@ -51,6 +59,7 @@ const Formulario = () => {
           name="hora"
           className="u-full-width"
           onChange={actualizarState}
+          value={hora}
         />
         <label>Síntomas</label>
         <textarea
@@ -58,6 +67,7 @@ const Formulario = () => {
           className="u-full-width"
           placeholder="Describe brevemente los síntomas"
           onChange={actualizarState}
+          value={sintomas}
         ></textarea>
         <button
           type="submit"
