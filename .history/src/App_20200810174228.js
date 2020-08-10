@@ -9,9 +9,7 @@ function App() {
         <div className="row">
           <div>
             <div className="one-half column">
-              <Formulario 
-                
-              />
+              
             </div>
             <div className="one-half column">
               2
