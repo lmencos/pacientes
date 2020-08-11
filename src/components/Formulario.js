@@ -11,6 +11,8 @@ const Formulario = () => {
     sintomas: ''
   });
 
+  const [ error, actualizarError ] = useState(false);
+
   //Leer lo que el usuario escribe en el form o cita
   const actualizarState = (e) => {
     actualizarCita({
@@ -26,7 +28,12 @@ const Formulario = () => {
   const submitCita = (e) => {
     e.preventDefault();
 
-    //Validar llebado del form
+    //Validar llenado del form o cita
+    if(mascota.trim() === '' || propietario.trim() === '' || 
+      fecha.trim() ==='' || hora.trim() === '' || sintomas.trim() === '') {
+      actualizarError(true);
+      return;
+    }
 
     //Asignar id
 
@@ -40,6 +47,12 @@ const Formulario = () => {
   return ( 
     <Fragment>
       <h4>Crear cita</h4>
+
+        { error ? 
+          <p className="alerta-error" >Favor de llenar todos los campos</p> 
+          : null 
+        }
+
       <form 
         onSubmit={submitCita}
         
