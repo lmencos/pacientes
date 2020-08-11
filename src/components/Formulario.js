@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import uuid from 'uuid/v4';
 
 const Formulario = () => {
 
@@ -35,7 +36,12 @@ const Formulario = () => {
       return;
     }
 
+    //resetear mensaje de error "favor de llenar todos los campos"
+    actualizarError(false);
+
     //Asignar id
+    cita.id = uuid();
+    console.log(cita);
 
     //Crear cita
 
