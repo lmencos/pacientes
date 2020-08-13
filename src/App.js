@@ -22,7 +22,7 @@ function App() {
   }
 
   //Mensaje condicional
-  console.log(citas.length);
+  const titulo = citas.length === 0 ? 'No hay citas'  : 'Administra tus citas'
 
   return (
     <Fragment>
@@ -36,7 +36,7 @@ function App() {
               />
             </div>
             <div className="one-half column">
-              <h4>Administra tus citas</h4>
+              <h4>{titulo}</h4>
                 {citas.map(cita => (
                   <Cita 
                     key={cita.id}
