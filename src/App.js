@@ -14,6 +14,15 @@ function App() {
       cita
     ])
   }
+  //Función para eliminar citas por su id
+  //Filter genera un nuevo arreglo
+  const eliminarCita = id => {
+    const nuevasCitas = citas.filter(cita => cita.id !== id)
+    guardarCitas(nuevasCitas);
+  }
+
+  //Mensaje condicional
+  console.log(citas.length);
 
   return (
     <Fragment>
@@ -32,12 +41,12 @@ function App() {
                   <Cita 
                     key={cita.id}
                     cita={cita}
+                    eliminarCita={eliminarCita}
                   />
                 ))}
             </div>
           </div>
         </div>
-
       </div>
     </Fragment>
   );
