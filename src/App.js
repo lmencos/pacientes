@@ -67,7 +67,9 @@ function App() {
         </div>
         <footer>
         <footer className="footer">
-          <p>Todos los derechos reservados, Luis Mencos Guzmán {year} &copy;</p>
+          <p>Todos los derechos reservados, Luis Mencos Guzmán {year} &copy;
+                  v1.2
+          </p>
         </footer>
         </footer>
       </div>
