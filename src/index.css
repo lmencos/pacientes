@@ -91,3 +91,8 @@ input[type="time"] {
   text-align: center;
   font-family:  'Staatliches', cursive;
 } 
+
+.footer{
+  text-align: center;
+  color: white;
+}
