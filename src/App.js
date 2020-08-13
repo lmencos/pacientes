@@ -22,6 +22,7 @@ function App() {
   }
 
   //Mensaje condicional
+  //console.log(citas.length);
   const titulo = citas.length === 0 ? 'No hay citas'  : 'Administra tus citas'
 
   return (
